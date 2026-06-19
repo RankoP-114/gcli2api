@@ -4,14 +4,14 @@
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: CNC-1.0](https://img.shields.io/badge/License-CNC--1.0-red.svg)](LICENSE)
-[![Docker](https://img.shields.io/badge/docker-available-blue.svg)](https://github.com/su-kaka/gcli2api/pkgs/container/gcli2api)
+[![Docker](https://img.shields.io/badge/docker-available-blue.svg)](https://github.com/RankoP-114/gcli2api/pkgs/container/gcli2api)
 
 [English](docs/README_EN.md) | 中文 | [日本語](docs/README_JA.md)
 
 ## 🚀 快速部署 
 
 [![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/97VMEF?referralCode=sukaka)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/su-kaka/gcli2api)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/RankoP-114/gcli2api)
 ---
 
 ## 安装指南
@@ -20,7 +20,7 @@
 
 **初始安装**
 ```bash
-curl -o termux-install.sh "https://raw.githubusercontent.com/su-kaka/gcli2api/refs/heads/master/termux-install.sh" && chmod +x termux-install.sh && ./termux-install.sh
+curl -o termux-install.sh "https://raw.githubusercontent.com/RankoP-114/gcli2api/refs/heads/master/termux-install.sh" && chmod +x termux-install.sh && ./termux-install.sh
 ```
 
 **重启服务**
@@ -33,7 +33,7 @@ bash termux-start.sh
 
 **初始安装**
 ```powershell
-iex (iwr "https://raw.githubusercontent.com/su-kaka/gcli2api/refs/heads/master/install.ps1" -UseBasicParsing).Content
+iex (iwr "https://raw.githubusercontent.com/RankoP-114/gcli2api/refs/heads/master/install.ps1" -UseBasicParsing).Content
 ```
 
 **重启服务**
@@ -43,7 +43,7 @@ iex (iwr "https://raw.githubusercontent.com/su-kaka/gcli2api/refs/heads/master/i
 
 **初始安装**
 ```bash
-curl -o install.sh "https://raw.githubusercontent.com/su-kaka/gcli2api/refs/heads/master/install.sh" && chmod +x install.sh && ./install.sh
+curl -o install.sh "https://raw.githubusercontent.com/RankoP-114/gcli2api/refs/heads/master/install.sh" && chmod +x install.sh && ./install.sh
 ```
 
 **重启服务**
@@ -56,7 +56,7 @@ bash start.sh
 
 **初始安装**
 ```bash
-curl -o darwin-install.sh "https://raw.githubusercontent.com/su-kaka/gcli2api/refs/heads/master/darwin-install.sh" && chmod +x darwin-install.sh && ./darwin-install.sh
+curl -o darwin-install.sh "https://raw.githubusercontent.com/RankoP-114/gcli2api/refs/heads/master/darwin-install.sh" && chmod +x darwin-install.sh && ./darwin-install.sh
 ```
 
 **重启服务**
@@ -70,10 +70,10 @@ bash start.sh
 **Docker 运行命令**
 ```bash
 # 使用通用密码
-docker run -d --name gcli2api --network host -e PASSWORD=pwd -e PORT=7861 -v $(pwd)/data/creds:/app/creds ghcr.io/su-kaka/gcli2api:latest
+docker run -d --name gcli2api --network host -e PASSWORD=pwd -e PORT=7861 -v $(pwd)/data/creds:/app/creds ghcr.io/rankop-114/gcli2api:latest
 
 # 使用分离密码
-docker run -d --name gcli2api --network host -e API_PASSWORD=api_pwd -e PANEL_PASSWORD=panel_pwd -e PORT=7861 -v $(pwd)/data/creds:/app/creds ghcr.io/su-kaka/gcli2api:latest
+docker run -d --name gcli2api --network host -e API_PASSWORD=api_pwd -e PANEL_PASSWORD=panel_pwd -e PORT=7861 -v $(pwd)/data/creds:/app/creds ghcr.io/rankop-114/gcli2api:latest
 ```
 
 **Docker Mac**
@@ -86,7 +86,7 @@ docker run -d \
   -e PASSWORD=pwd \
   -e PORT=7861 \
   -v "$(pwd)/data/creds":/app/creds \
-  ghcr.io/su-kaka/gcli2api:latest
+  ghcr.io/rankop-114/gcli2api:latest
 ```
 
 ```bash
@@ -99,7 +99,7 @@ docker run -d \
 -e PANEL_PASSWORD=panel_pwd \
 -e PORT=7861 \
 -v $(pwd)/data/creds:/app/creds \
-ghcr.io/su-kaka/gcli2api:latest
+ghcr.io/rankop-114/gcli2api:latest
 ```
 
 **Docker Compose 运行命令**
@@ -109,7 +109,7 @@ ghcr.io/su-kaka/gcli2api:latest
 
     services:
       gcli2api:
-        image: ghcr.io/su-kaka/gcli2api:latest
+        image: ghcr.io/rankop-114/gcli2api:latest
         container_name: gcli2api
         restart: unless-stopped
         network_mode: host
@@ -384,14 +384,14 @@ docker run -d --name gcli2api \
   -e MONGODB_URI="mongodb://mongodb:27017" \
   -e API_PASSWORD=your_password \
   --network your_network \
-  ghcr.io/su-kaka/gcli2api:latest
+  ghcr.io/rankop-114/gcli2api:latest
 
 # 使用 MongoDB Atlas
 docker run -d --name gcli2api \
   -e MONGODB_URI="mongodb+srv://user:pass@cluster.mongodb.net/gcli2api" \
   -e API_PASSWORD=your_password \
   -p 7861:7861 \
-  ghcr.io/su-kaka/gcli2api:latest
+  ghcr.io/rankop-114/gcli2api:latest
 ```
 
 **Docker Compose 示例**
@@ -412,7 +412,7 @@ services:
       - "27017:27017"
 
   gcli2api:
-    image: ghcr.io/su-kaka/gcli2api:latest
+    image: ghcr.io/rankop-114/gcli2api:latest
     container_name: gcli2api
     restart: unless-stopped
     depends_on:
@@ -494,14 +494,14 @@ export MONGODB_URI="mongodb://localhost:27017/gcli2api?readPreference=secondaryP
 docker run -d --name gcli2api \
   -e PASSWORD=mypassword \
   -e PORT=7861 \
-  ghcr.io/su-kaka/gcli2api:latest
+  ghcr.io/rankop-114/gcli2api:latest
 
 # 使用分离密码
 docker run -d --name gcli2api \
   -e API_PASSWORD=my_api_password \
   -e PANEL_PASSWORD=my_panel_password \
   -e PORT=7861 \
-  ghcr.io/su-kaka/gcli2api:latest
+  ghcr.io/rankop-114/gcli2api:latest
 ```
 
 注意：当设置了凭证环境变量时，系统将优先使用环境变量中的凭证，忽略 `creds` 目录中的文件。
